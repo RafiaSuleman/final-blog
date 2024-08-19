@@ -17,14 +17,14 @@ export async function generateMetadata({params}:any) {
   const publishedAt = new Date(blog.publishedAt).toISOString();
   const modifiedAt = new Date(blog.updatedAt || blog.publishedAt).toISOString();
 
-  let imageList = ["/blogs/tea.jpeg"];
+  let imageList:any = ["/blogs/tea.jpeg"];
   if (blog.image) {
     imageList =
       typeof blog.image.filePath === "string"
         ? ["http://localhost:3000"+ blog.image.filePath.replace("../public", "")]
         : blog.image;
   }
-  const ogImages = imageList.map((img) => {
+  const ogImages = imageList.map((img:any) => {
     return { url: img.includes("http") ? img : "http://localhost:3000" + img };
   });
 
@@ -57,8 +57,8 @@ export async function generateMetadata({params}:any) {
 export default function BlogPage({params}:any) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
 
-  let imageList = ["rafia"];
-  if (blog.image) {
+  let imageList:any = ["rafia"];
+  if (blog?.image) {
     imageList =
       typeof blog.image.filePath === "string"
         ? ["http://localhost:3000" + blog.image.filePath.replace("../public", "")]
@@ -68,11 +68,11 @@ export default function BlogPage({params}:any) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
-    "headline": blog.title,
-    "description": blog.description,
+    "headline": blog?.title,
+    "description": blog?.description,
     "image": imageList,
-    "datePublished": new Date(blog.publishedAt).toISOString(),
-    "dateModified": new Date(blog.updatedAt || blog.publishedAt).toISOString(),
+    "datePublished": blog?.publishedAt ? new Date(blog.publishedAt).toISOString() : null,
+    "dateModified": blog?.updatedAt ? new Date(blog.updatedAt).toISOString() : null,
     "author": [{
         "@type": "Person",
         "name": blog?.author ? [blog.author] : "rafia",
@@ -91,12 +91,12 @@ export default function BlogPage({params}:any) {
         
         <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-dark/60 dark:bg-dark/40" />
         <Image
-          src={blog.image.filePath.replace("../public", "")}
+          src={blog?.image?.filePath ? blog?.image.filePath.replace("../public", "") : ""}
           placeholder="blur"
-          blurDataURL={blog.image.blurhashDataUrl}
-          alt={blog.title}
-          width={blog.image.width}
-          height={blog.image.height}
+          blurDataURL={blog?.image?.blurhashDataUrl}
+          alt={blog?.title || " "}
+          width={blog?.image?.width}
+          height={blog?.image?.height}
           className="aspect-square w-full h-full object-cover object-center"
           priority
           sizes="100vw"
