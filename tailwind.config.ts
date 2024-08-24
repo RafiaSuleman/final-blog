@@ -19,6 +19,9 @@ const config = {
         "2xl": "1400px",
       },
     },
+    fontFamily:{
+        primary:'var(--font-schibstedGgrotesk)'
+    },
     extend: {
       colors: {
         alightdarkbg: "#1D2238",

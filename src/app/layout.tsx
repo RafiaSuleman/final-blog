@@ -1,7 +1,12 @@
-import { Inter } from "next/font/google";
+import {Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const SchibstedGrotesk = Schibsted_Grotesk({ 
+  subsets: ["latin"],
+  weight:['400','500','600','700','800','900'],
+  variable:"--font-schibstedGgrotesk"
+
+});
 
 export const metadata= {
   title: "Create Next App",
@@ -15,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={SchibstedGrotesk.variable}>{children}</body>
     </html>
   );
 }
