@@ -15,7 +15,7 @@ import {
 
 export default function Home() {
   const images = ["/pic1.jpg", "/pic6.jpg", "/pic7.jpg"];
-  const cards = [
+  const card1 = [
     {
       img: "/pic1.jpg",
       names: "Danil  ",
@@ -28,6 +28,8 @@ export default function Home() {
       tag3: "Reserch",
       tag2: "Framework",
     },
+  ]
+    const card2 =[
     {
       img: "/pic6.jpg",
       names: "cece",
@@ -39,6 +41,21 @@ export default function Home() {
       tag1: "Design",
       tag2: "Reserch",
     },
+  ]
+   const card3 = [ 
+    {
+      img: "/pic7.jpg",
+      names: "Wendi",
+      date: "17 March 2023",
+      title: "How collaboration make us better design",
+      url: "/",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit,sit, amet consectetur adipisicing elit. ",
+      tag1: "Design",
+      tag2: "Reserch",
+    }
+  ]
+  const card4 = [
     {
       img: "/pic7.jpg",
       names: "Wendi",
@@ -50,11 +67,37 @@ export default function Home() {
       tag1: "Design",
       tag2: "Reserch",
     },
-  ];
+  ]
+  const card5 = [
+    {
+      img: "/pic7.jpg",
+      names: "Wendi",
+      date: "17 March 2023",
+      title: "How collaboration make us better design",
+      url: "/",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit,sit, amet consectetur adipisicing elit. ",
+      tag1: "Design",
+      tag2: "Reserch",
+    },
+  ]
+  const card6 = [
+    {
+      img: "/pic7.jpg",
+      names: "Wendi",
+      date: "17 March 2023",
+      title: "How collaboration make us better design",
+      url: "/",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit,sit, amet consectetur adipisicing elit. ",
+      tag1: "Design",
+      tag2: "Reserch",
+    },
+  ]
+   
 
   return (
-    <div>
-      <div className="flex flex-col justify-center items-center gap-8 my-[90px] lg:p-10 p-5 ">
+      <div className="flex flex-col justify-center items-center gap-8 my-[90px] lg:p-10 p-10 ">
         <div className="flex flex-col justify-center items-center xl:space-y-2 space-y-4 text-center">
           <p>The Blog</p>
           <h1 className="text-3xl font-bold">Writtings from our Team</h1>
@@ -72,29 +115,12 @@ export default function Home() {
             alt=""
           />
         </div>
-        <div className="flex flex-row gap-4">
-          {images.map((image, index) => (
-            <div key={index}>
-              <Image
-                src={image}
-                height={15}
-                width={200}
-                className="w-full "
-                alt="img"
-              />
-            </div>
-          ))}
-        </div>
-        {/* grid */}
-        <div className="grid grid-cols-12 gap-5">
-          <div className="lg:col-span-9 col-span-12 gap-9">
-            {/* cards */}
-            <div className="grid grid-cols-1 xl:grid-cols-4 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {cards.map((card, index) => {
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-2">
+        {card1.map((card, index) => {
                 return (
                   <div
                     key={index}
-                    className="flex-1 flex flex-col justify-left  w-64"
+                    className="flex-1 flex flex-col justify-left  w-80"
                   >
                     <Image
                       src={card.img}
@@ -125,10 +151,188 @@ export default function Home() {
                   </div>
                 );
               })}
-            </div>
+        
+         {card2.map((card, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="flex-1 flex flex-col justify-left  w-80"
+                  >
+                    <Image
+                      src={card.img}
+                      width="350"
+                      height="50"
+                      alt="img"
+                      className="rounded-lg"
+                    />
+                    <p>
+                      {card.names} {card.date}
+                    </p>
+                    <div className="flex flex-row">
+                      <Link href={card.url} className="font-bold">
+                        {card.title}
+                        <BsArrowUpRight />
+                      </Link>
+                    </div>
+                    <p>{card.description}</p>
 
-            {/* Pagination */}
-            <div className="mt-[40px] ml-[40px]">
+                    <div className="flex flex-row gap-1">
+                      <div className="border border-black-2 px-3 py-2 rounded-full">
+                        {card.tag1}
+                      </div>
+                      <div className="border border-black-2 px-3 py-2 rounded-full">
+                        {card.tag2}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+         {card3.map((card, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="flex-1 flex flex-col justify-left  w-80"
+                  >
+                    <Image
+                      src={card.img}
+                      width="350"
+                      height="50"
+                      alt="img"
+                      className="rounded-lg"
+                    />
+                    <p>
+                      {card.names} {card.date}
+                    </p>
+                    <div className="flex flex-row">
+                      <Link href={card.url} className="font-bold">
+                        {card.title}
+                        <BsArrowUpRight />
+                      </Link>
+                    </div>
+                    <p>{card.description}</p>
+
+                    <div className="flex flex-row gap-1">
+                      <div className="border border-black-2 px-3 py-2 rounded-full">
+                        {card.tag1}
+                      </div>
+                      <div className="border border-black-2 px-3 py-2 rounded-full">
+                        {card.tag2}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+      </div>
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-2">
+        {card4.map((card, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="flex-1 flex flex-col justify-left  w-80"
+                  >
+                    <Image
+                      src={card.img}
+                      width="350"
+                      height="50"
+                      alt="img"
+                      className="rounded-lg"
+                    />
+                    <p>
+                      {card.names} {card.date}
+                    </p>
+                    <div className="flex flex-row">
+                      <Link href={card.url} className="font-bold">
+                        {card.title}
+                        <BsArrowUpRight />
+                      </Link>
+                    </div>
+                    <p>{card.description}</p>
+
+                    <div className="flex flex-row gap-1">
+                      <div className="border border-black-2 px-3 py-2 rounded-full">
+                        {card.tag1}
+                      </div>
+                      <div className="border border-black-2 px-3 py-2 rounded-full">
+                        {card.tag2}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+         {card5.map((card, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="flex-1 flex flex-col justify-left  w-80"
+                  >
+                    <Image
+                      src={card.img}
+                      width="350"
+                      height="50"
+                      alt="img"
+                      className="rounded-lg"
+                    />
+                    <p>
+                      {card.names} {card.date}
+                    </p>
+                    <div className="flex flex-row">
+                      <Link href={card.url} className="font-bold">
+                        {card.title}
+                        <BsArrowUpRight />
+                      </Link>
+                    </div>
+                    <p>{card.description}</p>
+
+                    <div className="flex flex-row gap-1">
+                      <div className="border border-black-2 px-3 py-2 rounded-full">
+                        {card.tag1}
+                      </div>
+                      <div className="border border-black-2 px-3 py-2 rounded-full">
+                        {card.tag2}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+          {card6.map((card, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="flex-1 flex flex-col justify-left  w-80"
+                  >
+                    <Image
+                      src={card.img}
+                      width="350"
+                      height="50"
+                      alt="img"
+                      className="rounded-lg"
+                    />
+                    <p>
+                      {card.names} {card.date}
+                    </p>
+                    <div className="flex flex-row">
+                      <Link href={card.url} className="font-bold">
+                        {card.title}
+                        <BsArrowUpRight />
+                      </Link>
+                    </div>
+                    <p>{card.description}</p>
+
+                    <div className="flex flex-row gap-1">
+                      <div className="border border-black-2 px-3 py-2 rounded-full">
+                        {card.tag1}
+                      </div>
+                      <div className="border border-black-2 px-3 py-2 rounded-full">
+                        {card.tag2}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+      </div>
+      
+        {/* paggination */}
+        <div className="mt-[40px]">
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>
@@ -154,15 +358,8 @@ export default function Home() {
                 </PaginationContent>
               </Pagination>
             </div>
-
-            <Footer />
-          </div>
-          <div className="lg:col-span-3 hidden">
-            <Sidebar />
-          </div>
-        </div>
+            
+        <Footer/>
       </div>
-      {/* <Footer/> */}
-    </div>
   );
 }

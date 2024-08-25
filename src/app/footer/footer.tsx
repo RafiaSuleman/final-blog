@@ -184,7 +184,7 @@ const Footer = () => {
         },
     ]
   return (
-    <div className="flex flex-col gap-9 justify-center items-center bg-pink-500 xl:p-9 mt-[50px] py-[20px] rounded-sm">
+    <div className="flex flex-col gap-9 justify-center items-center bg-pink-500 xl:p-9 mt-[50px] py-[20px] rounded-sm w-screen">
       <div className="space-y-3 flex flex-col justify-center items-center">
         <h1>Let us get started on something</h1>
         <p className="text-sm">
@@ -197,16 +197,17 @@ const Footer = () => {
           Start your 7-day free trail today
         </Link>
       </div>
-      <div className="grid xl:grid-cols-6 grid-cols-3 gap-10 items-start">
+      <div className="grid xl:grid-cols-6 grid-cols-3 gap-10 xl:gap-30 items-start">
 
         {/* link col 1 */}
-        <div className="flex flex-col text-sm ">
-           {Link1.map((list,index)=>{
-                return (<div key={index}  >
-                        <Link href={list.url}>{list.link}</Link>
-                </div>)
-            })}
-        </div>
+                <div className="flex flex-col text-sm ">
+                {Link1.map((list,index)=>{
+                        return (
+                                <div key={index}  >
+                                        <a href={list.url} > {list.link}</a>
+                                </div>)
+                    })}
+                </div>
 
         {/* Link col 2 */}
         <div className="flex flex-col text-sm">
