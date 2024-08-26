@@ -55,7 +55,7 @@ const Footer = () => {
             url:"/"
         },
         {
-            link:"Media kit",
+            link:"MediLink kit",
             url:"/"
         },
         {
@@ -184,77 +184,90 @@ const Footer = () => {
         },
     ]
   return (
-    <div className="flex flex-col gap-9 justify-center items-center bg-pink-500 xl:p-9 mt-[50px] py-[20px] rounded-sm w-screen ">
-      <div className="space-y-3 flex flex-col justify-center items-center">
+    <footer className="w-full bg-gray-900">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-11">
+    <div className=" flex flex-col justify-center items-center text-white space-y-5">
         <h1>Let us get started on something</h1>
         <p className="text-sm">
           Join over 4,000+ startups already growing with United
         </p>
-      </div>
-      <div>
         <Link href="/" className="border rounded-full px-3 py-3">
           {" "}
           Start your 7-day free trail today
         </Link>
       </div>
-      <div className="grid xl:grid-cols-6 grid-cols-3 gap-10 xl:gap-30 items-start">
-
-        {/* link col 1 */}
-                <div className="flex flex-col text-sm ">
-                {Link1.map((list,index)=>{
-                        return (
-                                <div key={index}  >
-                                        <a href={list.url} > {list.link}</a>
-                                </div>)
-                    })}
+        <div className="grid grid-cols-2 lg:grid-cols-6 lg:gap-8 gap-12 pt-14 pb-20 max-w-md mx-auto md:max-w-xl lg:max-w-full">
+            <div className="block">
+                    <ul className="text-lg  transition-all duration-500">
+                    {Link1.map((list,index)=>{
+                         return (
+                            <div key={index}  >
+                                  <li className="mb-6"><Link href={list.url}  className="text-gray-400 hover:text-white">{list.link}</Link></li>
+                            </div>)
+                     })}
+                    </ul>
                 </div>
 
-        {/* Link col 2 */}
-        <div className="flex flex-col text-sm">
-           {Link2.map((list,index)=>{
-                return (<div key={index} >
-                        <Link href={list.url}>{list.link}</Link>
-                </div>)
-            })}
-        </div>
 
-        {/* link col 3 */}
-        <div className="flex flex-col text-sm">
-           {Link3.map((list,index)=>{
-                return (<div key={index} >
-                        <Link href={list.url}>{list.link}</Link>
-                </div>)
-            })}
+            <div className="block">
+                    <ul className="text-lg  transition-all duration-500">
+                    {Link2.map((list,index)=>{
+                         return (
+                            <div key={index}  >
+                                  <li className="mb-6"><Link href={list.url}  className="text-gray-400 hover:text-white">{list.link}</Link></li>
+                            </div>)
+                     })}
+                    </ul>
+                </div>
+            <div className="block">
+                    <ul className="text-lg  transition-all duration-500">
+                    {Link3.map((list,index)=>{
+                         return (
+                            <div key={index}  >
+                                  <li className="mb-6"><Link href={list.url}  className="text-gray-400 hover:text-white">{list.link}</Link></li>
+                            </div>)
+                     })}
+                    </ul>
+                </div>
+            <div className="block">
+                    <ul className="text-lg  transition-all duration-500">
+                    {Link4.map((list,index)=>{
+                         return (
+                            <div key={index}  >
+                                  <li className="mb-6"><Link href={list.url}  className="text-gray-400 hover:text-white">{list.link}</Link></li>
+                            </div>)
+                     })}
+                    </ul>
+                </div>
+            <div className="block">
+                    <ul className="text-lg  transition-all duration-500">
+                    {Link5.map((list,index)=>{
+                         return (
+                            <div key={index}  >
+                                  <li className="mb-6"><Link href={list.url}  className="text-gray-400 hover:text-white">{list.link}</Link></li>
+                            </div>)
+                     })}
+                    </ul>
+                </div>
+            <div className="block">
+                    <ul className="text-lg  transition-all duration-500">
+                    {Link6.map((list,index)=>{
+                         return (
+                            <div key={index}  >
+                                  <li className="mb-6"><Link href={list.url}  className="text-gray-400 hover:text-white">{list.link}</Link></li>
+                            </div>)
+                     })}
+                    </ul>
+                </div>
+         </div>
+        <div className="py-7 border-t border-gray-700 ">
+            <div className="flex justify-center flex-col items-center lg:space-y-0 xl:justify-between xl:flex-row text-white">
+               <p>TechGleam</p>
+               <p>2077TechGleam all rights reserved</p>
+            </div>
         </div>
-
-        {/* link col 4 */}
-        <div className="flex flex-col text-sm">
-           {Link4.map((list,index)=>{
-                return (<div key={index} >
-                        <Link href={list.url}>{list.link}</Link>
-                </div>)
-            })}
-        </div>
-
-        {/* link col 5 */}
-        <div className="flex flex-col text-sm">
-           {Link5.map((list,index)=>{
-                return (<div key={index} >
-                        <Link href={list.url}>{list.link}</Link>
-                </div>)
-            })}
-        </div>
-
-        {/* link col 6 */}
-        <div className="flex flex-col text-sm">
-           {Link6.map((list,index)=>{
-                return (<div key={index} >
-                        <Link href={list.url}>{list.link}</Link>
-                </div>)
-            })}
-        </div>
-      </div>
     </div>
+</footer>
   );
 };
 
