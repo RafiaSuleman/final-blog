@@ -13,6 +13,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
+
 export default function Home() {
   const images = ["/pic1.jpg", "/pic6.jpg", "/pic7.jpg"];
   const card1 = [
@@ -97,7 +98,7 @@ export default function Home() {
    
 
   return (
-      <div className="flex flex-col justify-center items-center gap-8 my-[90px] lg:p-10 p-10 ">
+      <div className="flex flex-col justify-center items-center gap-8 my-[30px] p-10 overflow-x-hidden overflow-hidden ">
         <div className="flex flex-col justify-center items-center xl:space-y-2 space-y-4 text-center">
           <p>The Blog</p>
           <h1 className="text-3xl font-bold">Writtings from our Team</h1>
@@ -120,7 +121,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="flex-1 flex flex-col justify-left  w-80"
+                    className="flex-1 flex flex-col justify-left space-y-4 w-80"
                   >
                     <Image
                       src={card.img}
@@ -156,7 +157,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="flex-1 flex flex-col justify-left  w-80"
+                    className="flex-1 flex flex-col justify-left  w-80 space-y-4"
                   >
                     <Image
                       src={card.img}
@@ -191,7 +192,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="flex-1 flex flex-col justify-left  w-80"
+                    className="flex-1 flex flex-col justify-left  w-80 space-y-4"
                   >
                     <Image
                       src={card.img}
@@ -358,7 +359,7 @@ export default function Home() {
                 </PaginationContent>
               </Pagination>
             </div>
-            
+
         <Footer/>
       </div>
   );

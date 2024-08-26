@@ -184,7 +184,7 @@ const Footer = () => {
         },
     ]
   return (
-    <div className="flex flex-col gap-9 justify-center items-center bg-pink-500 xl:p-9 mt-[50px] py-[20px] rounded-sm w-screen">
+    <div className="flex flex-col gap-9 justify-center items-center bg-pink-500 xl:p-9 mt-[50px] py-[20px] rounded-sm w-screen ">
       <div className="space-y-3 flex flex-col justify-center items-center">
         <h1>Let us get started on something</h1>
         <p className="text-sm">
