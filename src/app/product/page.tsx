@@ -18,7 +18,6 @@ const Productpage = () => {
             title:'Blog Post Title',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, labore.',
             imageUrl:"/pic1.jpg",
-    
                 tag1:'tag1',
                 tag2:'tag2',
                 tag3:'tag3',
@@ -27,8 +26,7 @@ const Productpage = () => {
         {
             title:'Blog Post Title',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, labore.',
-            imageUrl:"/pic1.jpg",
-      
+            imageUrl:"/pic1.jpg",     
                 tag1:'tag1',
                 tag2:'tag2',
                 tag3:'tag3', 
@@ -36,8 +34,7 @@ const Productpage = () => {
         {
             title:'Blog Post Title',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, labore.',
-            imageUrl:"/pic1.jpg",
- 
+            imageUrl:"/pic1.jpg", 
                 tag1:'tag1',
                 tag2:'tag2',
                 tag3:'tag3',
@@ -46,8 +43,7 @@ const Productpage = () => {
         {
             title:'Blog Post Title',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, labore.',
-            imageUrl:"/pic1.jpg",
-    
+            imageUrl:"/pic1.jpg",    
                 tag1:'tag1',
                 tag2:'tag2',
                 tag3:'tag3',
@@ -65,8 +61,7 @@ const Productpage = () => {
         {
             title:'Blog Post Title',
             description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, labore.',
-            imageUrl:"/pic1.jpg",
-        
+            imageUrl:"/pic1.jpg",  
                 tag1:'tag1',
                 tag2:'tag2',
                 tag3:'tag3',
@@ -172,7 +167,7 @@ const Productpage = () => {
                             </div>
                             <div className="flex flex-1 flex-col justify-between bg-white p-6">
                             <div className="flex-1">
-                                <h1 className="text-xl font-semibold text-gray-900">Boost your conversion rate</h1>
+                                <h1 className="text-xl font-semibold text-gray-900">{card.title}</h1>
                                 <div className="flex gap-4 text-sm font-medium text-[#B09953] ">
                                     <div>{card.tag1}</div>
                                     <div>{card.tag2}</div>
