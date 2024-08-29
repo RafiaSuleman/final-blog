@@ -262,8 +262,8 @@ const Footer = () => {
          </div>
         <div className="py-7 border-t border-gray-700 ">
             <div className="flex justify-center flex-col items-center lg:space-y-0 xl:justify-between xl:flex-row text-white">
-               <p>TechGleam</p>
-               <p>2077TechGleam all rights reserved</p>
+               <p>TecHives</p>
+               <p>2024TechHives all rights reserved</p>
             </div>
         </div>
     </div>

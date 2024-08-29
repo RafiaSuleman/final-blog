@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowUpRight } from "react-icons/bs";
-import Footer from "./footer/footer";
-import Sidebar from "./sidebar/sidebar";
+import Footer from "../components/footer/footer";
+import Sidebar from "../components/sidebar/sidebar";
 import {
   Pagination,
   PaginationContent,
@@ -184,7 +184,7 @@ export default function Home() {
         </Pagination>
       </div>
 
-      <Footer />
+      
     </div>
   );
 }

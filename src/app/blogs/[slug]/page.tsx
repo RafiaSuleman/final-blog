@@ -3,6 +3,7 @@ import RenderMdx from "../../../components/blog/renderMdx";
 import { allBlogs } from "contentlayer/generated";
 import { slug } from "github-slugger";
 import Image from "next/image";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
@@ -106,7 +107,20 @@ export default function BlogPage({params}:any) {
 
       <div className="grid grid-cols-12  gap-y-8 lg:gap-8 sxl:gap-16 mt-8 px-5 md:px-10">
         <div className="col-span-12  lg:col-span-4">
-          
+          <details className="border border-solid border-black text-black rounded-lg p-4 sticky top-6  max-h-[80vh] overflow-hidden overflow-y-auto">
+              <summary className="text-lg font-semibold capitalize cursor-pointer " >Table of Contant </summary>
+              <ul >
+                {blog?.toc.map((heading:any)=>{
+                  return(
+                    <li className="py-1" key={`#${heading.slug}`}>
+                        <Link href={`#${heading.slug}`} data-level={heading.level}  className="data-[level=two]:pl-0 data-[level=two]:pt-2 data-[level=two]:border-t border-solid border-black/40 data-[level=three]:pl-4 sm:data-[level=three]:pl-6 flex items-center justify-start">{heading.level==='three' ? (<span className="flex w-1 h-1 rounded-full bg-black mr-2 ">&nbsp; </span>) : null}
+                        <span>{heading.text}</span>
+                        </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+          </details>
         </div>
         <RenderMdx blog={blog} />
       </div>

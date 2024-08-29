@@ -1,7 +1,8 @@
 import {Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
-import Navbar from "./navbar/navbar";
-import Header from "./navbar/header";
+import Navbar from "../components/navbar/navlinks";
+import Header from "../components/navbar/header";
+import Footer from "../components/footer/footer";
 
 const SchibstedGrotesk = Schibsted_Grotesk({ 
   subsets: ["latin"],
@@ -23,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={SchibstedGrotesk.variable}>
-        <Header/>
-        {children}</body>
+        <Header />
+        {children}
+        <Footer/>
+        </body>
     </html>
   );
 }

@@ -11,7 +11,7 @@ const Navbar = () => {
         },
         {
           name: "Product",
-          path: "/services",
+          path: "/product",
         },
 
         {
@@ -27,10 +27,8 @@ const Navbar = () => {
         
       ];
       const PathName = usePathname();
-  return (
-    <div className='flex gap-8' >
-      
-    <nav className="flex gap-8 ">
+  return ( 
+    <nav className="flex items-center justify-center gap-8 ">
       {Links.map((link, index) => (
        <>
           <Link
@@ -38,14 +36,13 @@ const Navbar = () => {
             href={link.path}
             className={`${
               link.path === PathName &&
-              "text-white bg-black px-3 py-1 rounded-sm"
+              " hover:bg-zinc-200 px-3 py-1 rounded-sm"
             } capatilize font-medium `}>
             {link.name}
           </Link>
           </>
       ))}
     </nav>
-    </div>
   )
 }
 

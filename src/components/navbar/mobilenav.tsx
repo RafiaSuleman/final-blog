@@ -20,7 +20,7 @@ const Mobilenav = () => {
         },
         {
           name: "Product",
-          path: "/services",
+          path: "/product",
         },
 
         {
@@ -50,7 +50,7 @@ const Mobilenav = () => {
             <nav  className='flex flex-col justify-center items-center gap-8'>
                 {Links.map((link,index)=>{
                     return(
-                        <Link href={link.path} key={index} className={`${link.path===pathname &&" text-white bg-black px-2 py-2 rounded-sm"} "text-xl capitalize `}>
+                        <Link href={link.path} key={index} className={`${link.path===pathname &&" bg-zinc-400 px-2 py-2 rounded-sm"} "text-xl capitalize `}>
                             {link.name}
                         </Link>
                     );
