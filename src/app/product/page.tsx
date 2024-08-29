@@ -167,7 +167,7 @@ const Productpage = () => {
     <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
         {cards.map((card, index) => {
               return (
-                        <div className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+                        <div className="flex flex-col overflow-hidden rounded-lg shadow-lg "key={index}>
                             <div className="flex-shrink-0">
                             <img className="h-48 w-full object-cover" src={card.imageUrl} alt=""/>
                             </div>
