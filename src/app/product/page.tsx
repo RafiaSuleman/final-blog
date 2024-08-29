@@ -159,33 +159,32 @@ const Productpage = () => {
              </div>
   <div className="relative mx-auto max-w-7xl">
     <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-        {cards.map((card, index) => {
-              return (
-                        <div className="flex flex-col overflow-hidden rounded-lg shadow-lg " key={index}>
-                            <div className="flex-shrink-0">
-                            <img className="h-48 w-full object-cover" src={card.imageUrl} alt=""/>
-                            </div>
-                            <div className="flex flex-1 flex-col justify-between bg-white p-6">
-                            <div className="flex-1">
-                                <h1 className="text-xl font-semibold text-gray-900">{card.title}</h1>
-                                <div className="flex gap-4 text-sm font-medium text-[#B09953] ">
-                                    <div>{card.tag1}</div>
-                                    <div>{card.tag2}</div>
-                                    <div>{card.tag3}</div>
-                                </div>
-                                <a href="#" className="mt-2 block">
-                               
-                                <p className="mt-3 text-base text-gray-500">{card.description}</p>
-                                </a>
-                            </div>
-                            <div className="mt-6 flex items-center">           
-                                <p className="text-sm font-medium text-gray-900">
-                                    <Link href="#" className="hover:underline hover:text-[#B09953]">Read more</Link>
-                                </p>
-                            </div>
-                            </div>
-                        </div>
-              )})}
+    {cards.map((card, index) => (
+            <div className="flex flex-col overflow-hidden rounded-lg shadow-lg " key={index}>
+                <div className="flex-shrink-0">
+                <img className="h-48 w-full object-cover" src={card.imageUrl} alt=""/>
+                </div>
+                <div className="flex flex-1 flex-col justify-between bg-white p-6">
+                <div className="flex-1">
+                    <h1 className="text-xl font-semibold text-gray-900">Boost your conversion rate</h1>
+                    <div className="flex gap-4 text-sm font-medium text-[#B09953] ">
+                        <div>{card.tag1}</div>
+                        <div>{card.tag2}</div>
+                        <div>{card.tag3}</div>
+                    </div>
+                    <a href="#" className="mt-2 block">
+                   
+                    <p className="mt-3 text-base text-gray-500">{card.description}</p>
+                    </a>
+                </div>
+                <div className="mt-6 flex items-center">           
+                    <p className="text-sm font-medium text-gray-900">
+                        <Link href="#" className="hover:underline hover:text-[#B09953]">Read more</Link>
+                    </p>
+                </div>
+                </div>
+            </div>
+          ))}
     </div>
   </div>
 </div>
