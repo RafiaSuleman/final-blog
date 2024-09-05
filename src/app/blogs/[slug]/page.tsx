@@ -18,7 +18,7 @@ export async function generateMetadata({params}:any) {
   const publishedAt = new Date(blog.publishedAt).toISOString();
   const modifiedAt = new Date(blog.updatedAt || blog.publishedAt).toISOString();
 
-  let imageList:any = ["/blogs/tea.jpeg"];
+  let imageList:any = ["/blogs/image.png"];
   if (blog.image) {
     imageList =
       typeof blog.image.filePath === "string"

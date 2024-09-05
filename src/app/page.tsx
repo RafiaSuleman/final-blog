@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BsArrowUpRight } from "react-icons/bs";
-import Footer from "../components/footer/footer";
-import Sidebar from "../components/sidebar/sidebar";
+import { allBlogs } from "contentlayer/generated";
 import {
   Pagination,
   PaginationContent,
@@ -13,9 +11,11 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { ArrowRight, Tag } from "lucide-react";
+import { format, parseISO } from "date-fns";
+import { sortBlogs } from "../utils";
 
 export default function Home() {
-  const images = ["/pic1.jpg", "/pic6.jpg", "/pic7.jpg"];
+  const blogs = sortBlogs(allBlogs)
   const cards = [
     {
       img: "/pic1.jpg",
@@ -89,7 +89,7 @@ export default function Home() {
       tag2: "Reserch",
     },
   ];
-
+  
   return (
     <div className="flex flex-col justify-center items-center gap-8 my-[30px] py-10 overflow-x-hidden px-6 lg:px-10 h-auto">
       <div className="flex flex-col justify-center items-center xl:space-y-2 space-y-4 text-center">
@@ -100,10 +100,10 @@ export default function Home() {
 
   
         <Image
-          src="/pic1.jpg"
+          src="/blogs/image2.png"
           className="rounded-lg w-full "
-          height={700}
-          width={700}
+          height={400}
+          width={600}
           alt=""
         />
 
@@ -114,7 +114,7 @@ export default function Home() {
         </div>
         <div className="relative ">
           <div className=" mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-            {cards.map((card, index) => {
+            {blogs.map((blog:any, index:any) => {
               return (
                 <div
                   className="flex flex-col overflow-hidden rounded-lg shadow-lg"
@@ -123,28 +123,29 @@ export default function Home() {
                   <div className="flex-shrink-0">
                     <img
                       className="h-48 w-full object-cover"
-                      src={card.img}
-                      alt={card.authorName}
+                      src={blog.image.filePath.replace("../public", "")}
+                      alt={blog.authorName}
                     />
                   </div>
                   <div className="flex flex-1 flex-col justify-between bg-white p-6">
                     <div className="flex-1">
                       <h1 className="text-semibild text-sm">
-                        {card.authorName} {card.date}
+                        {blog.author} {format(parseISO(blog.publishedAt), "LLLL d, yyyy")
+}
                       </h1>
-                      <Link href="#" className="mt-2 block">
+                      <Link href={blog.url} className="mt-2 block">
                         <div className="flex gap-5 justify-between text-xl font-semibold text-gray-900">
-                          <h1 className="w-[90%]"> {card.title} </h1>
+                          <h1 className="w-[90%]"> {blog.title} </h1>
                           <ArrowRight className="max-w-10" rotate={45}/>
                         </div>
                         <p className="mt-3 text-base text-gray-500">
-                          {card.description}
+                          {blog.description}
                         </p>
                       </Link>
                     </div>
                     <div className="mt-6 flex items-center gap-2">
-                        <div className="border border-black px-2 py-1 rounded-full bg-green-100">{card.tag1}</div>
-                        <div  className="border border-black px-2 py-1 rounded-full bg-yellow-100">{card.tag2}</div>
+                        <div className="border border-black px-2 py-1 rounded-full bg-green-100">{blog.tags[0]}</div>
+                        <div  className="border border-black px-2 py-1 rounded-full bg-yellow-100">{blog.tags[1]}</div>
                       
                     </div>
                 

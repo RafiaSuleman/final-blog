@@ -36,6 +36,10 @@ const Blog = defineDocumentType(() => ({
       type: "boolean",
       default: true,
     },
+    isFeature: {
+      type: "boolean",
+      default: false,
+    },
     
     tags: {
       type: "list",

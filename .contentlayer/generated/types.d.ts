@@ -20,6 +20,7 @@ export type Blog = {
   updatedAt: IsoDateTimeString
   author: string
   isPublished: boolean
+  isFeature: boolean
   tags?: string[] | undefined
   /** MDX file body */
   body: MDX

@@ -36,6 +36,10 @@ var Blog = defineDocumentType(() => ({
       type: "boolean",
       default: true
     },
+    isFeature: {
+      type: "boolean",
+      default: false
+    },
     tags: {
       type: "list",
       of: { type: "string" }
@@ -82,4 +86,4 @@ var contentlayer_config_default = makeSource({
 export {
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-6UEOOQOI.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-UCMTVKFF.mjs.map
