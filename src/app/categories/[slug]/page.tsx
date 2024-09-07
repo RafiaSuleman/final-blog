@@ -6,16 +6,6 @@ import { sortBlogs } from "@/src/utils";
 import { allBlogs } from "@/.contentlayer/generated";
 import { slug } from "github-slugger";
 import Categories from "@/src/components/blog/categories";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-
-import { Card, CardContent } from "@/components/ui/card";
 
 const CategoryPage = ({ params }: any) => {
   const sortedBlogs = sortBlogs(allBlogs);
@@ -34,47 +24,16 @@ const CategoryPage = ({ params }: any) => {
       return slugified === params.slug;
     });
   });
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  );
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative ">
-        {/* carousal  */}
-        <div className="w-full h-screen">
-          <Carousel
-            plugins={[plugin.current]}
-            className="w-full "
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-            <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1 ">
-                    <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6 w-full">
-                        <span className="text-4xl font-semibold">
-                          {index + 1}
-                        </span>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
-
-        {/* <div className="grid grid-cols-1 xl:grid-cols-3 gap-7">
-          <div className="relative flex items-center justify-center h-full w-full ">
+      <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16  ">
+        {/* hero Image */}
+        <div className="relative flex items-center justify-center h-full w-full ">
             <Image
               src={featureblog.image.filePath.replace("../public", "")}
               alt="image"
-              height={50}
-              width={400}
+              height={800}
+              width={1200}
               className="relative z-0 h-full w-full"
             />
             <div className="absolute inset-0 z-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
@@ -82,95 +41,7 @@ const CategoryPage = ({ params }: any) => {
               {featureblog.title}
             </div>
           </div>
-          <div className="col-span-2">
-            <div className="grid grid-rows-4">
-              <div className="flex items-start mb-3 pb-3">
-                <a href="#" className="inline-block mr-3">
-                  <div className="w-20 h-20 bg-cover bg-center">
-                    <Image src="/img2.jpg" alt="image" height={10} width={70} />
-                  </div>
-                </a>
-                <div className="text-sm space-y-3">
-                  <a href="#">
-                    <h1 className="text-gray-900 font-medium leading-none">
-                      Cristiano Ronaldo of Juventus FC looks dejected during
-                      the...
-                    </h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                  </a>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptas maiores, labore doloremque tempora expedita laborum
-                    eligendi cumque exercitationem .
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start mb-3 pb-3">
-                <a href="#" className="inline-block mr-3">
-                  <div className="w-20 h-20 bg-cover bg-center">
-                    <Image src="/img3.jpg" alt="image" height={10} width={70} />
-                  </div>
-                </a>
-                <div className="text-sm space-y-3">
-                  <a href="#">
-                    <h1 className="text-gray-900 font-medium leading-none">
-                      Cristiano Ronaldo of Juventus FC looks dejected during
-                      the...
-                    </h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                  </a>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptas maiores, labore doloremque tempora expedita laborum
-                    eligendi cumque exercitationem .
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start mb-3 pb-3">
-                <a href="#" className="inline-block mr-3">
-                  <div className="w-20 h-20 bg-cover bg-center">
-                    <Image src="/img4.jpg" alt="image" height={10} width={70} />
-                  </div>
-                </a>
-                <div className="text-sm space-y-3">
-                  <a href="#">
-                    <h1 className="text-gray-900 font-medium leading-none">
-                      Cristiano Ronaldo of Juventus FC looks dejected during
-                      the...
-                    </h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                  </a>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptas maiores, labore doloremque tempora expedita laborum
-                    eligendi cumque exercitationem .
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start mb-3 pb-3">
-                <a href="#" className="inline-block mr-3">
-                  <div className="w-20 h-20 bg-cover bg-center">
-                    <Image src="/img2.jpg" alt="image" height={10} width={70} />
-                  </div>
-                </a>
-                <div className="text-sm space-y-3">
-                  <a href="#">
-                    <h1 className="text-gray-900 font-medium leading-none">
-                      Cristiano Ronaldo of Juventus FC looks dejected during
-                      the...
-                    </h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                  </a>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptas maiores, labore doloremque tempora expedita laborum
-                    eligendi cumque exercitationem .
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+        
       </div>
 
       {/* cards */}

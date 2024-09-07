@@ -186,16 +186,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-gray-900">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-11">
-    <div className=" flex flex-col justify-center items-center text-white space-y-5">
-        <h1>Let us get started on something</h1>
-        <p className="text-sm">
-          Join over 4,000+ startups already growing with United
-        </p>
-        <Link href="/" className="border rounded-full px-3 py-3">
-          {" "}
-          Start your 7-day free trail today
-        </Link>
-      </div>
+  
         <div className="grid grid-cols-2 lg:grid-cols-6 lg:gap-8 gap-12 pt-14 pb-20 max-w-md mx-auto md:max-w-xl lg:max-w-full">
             <div className="block">
                     <ul className="text-lg  transition-all duration-500">
