@@ -10,20 +10,14 @@ const Navbar = () => {
           path: "/",
         },
         {
-          name: "Product",
-          path: "/product",
+          name: "Categories",
+          path: "/categories/all",
         },
 
         {
-          name: "Resources",
-          path: "/resources",
+          name: "Popular Blogs",
+          path: "/popularblogs",
         },
-        {
-          name: "Pricing",
-          path: "/pricing",
-        },
-        
-       
         
       ];
       const PathName = usePathname();

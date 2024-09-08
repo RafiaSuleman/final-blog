@@ -69,12 +69,8 @@ const CategoryPage = ({ params }: any) => {
                     <h1 className="text-xl font-semibold text-gray-900">
                       {blog.title}
                     </h1>
-                    <div className="flex gap-4 text-sm font-medium text-[#B09953] ">
-                      <div>{blog.tags[0]}</div>
-                      <div>{blog.tags[1]}</div>
-                      <div>{blog.tags[2]}</div>
-                    </div>
-                    <a href="#" className="mt-2 block">
+                    
+                    <a href="#" className="mt-4 block">
                       <p className="mt-3 text-base text-gray-500">
                         {blog.description}
                       </p>
