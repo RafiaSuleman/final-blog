@@ -6,7 +6,7 @@ import Mobilenav from "./mobilenav";
 import Image from "next/image";
 const Header = () => {
   return (
-    <header className="container py-5 xl:py-8  sticky top-0 bg-white text-black z-50  mx-auto flex items-center justify-between ">    
+    <header className="container py-3 xl:py-5  sticky top-0 bg-white text-black z-50  mx-auto flex items-center justify-between ">    
         <Link href="/">
           <div className="flex gap-2 ">
             <Image src="/logo.png" width={50} height={100} alt="tech hives" />
