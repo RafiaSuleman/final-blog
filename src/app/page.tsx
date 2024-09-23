@@ -16,8 +16,20 @@ export default function Home() {
   };
   return (
     <div className="flex flex-col justify-center items-center gap-8 my-[30px]  overflow-x-hidden px-6 lg:px-10 h-auto">
-    
-          <div className="bg-gradient-to-br from-[#7899F6] to-[#EBA49A] h-64 w-full flex items-end justify-Left ">
+     <div className="relative flex items-center justify-center h-96 w-full ">
+            <Image
+              src="/blogs/blogimage1.jpg"
+              alt="image"
+              height={800}
+              width={1200}
+              className=" h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 z-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+            <div className="absolute bottom-0 text-white text-xl  left-0 p-5  italic">
+              <p>A modern blog built with <span className="font-semibold text-blue-200"> MDX, Tailwind CSS, Next.js, and TypeScript</span>.  <br/>It combines the power of Markdown  and React components,utility-first  <br/> styling, and server-side rendering for fast performance and SEO. TypeScript  <br/> ensures  type safety and maintainability, while Tailwind offers rapid, <br/> responsive design customization.</p>
+            </div>
+          </div>
+       {/*    <div className="bg-gradient-to-br from-[#7899F6] to-[#EBA49A] h-64 w-full flex items-end justify-Left ">
         
             <div className="text-white text-2xl italic p-5 text-Left px-10 ">
             <p>
@@ -33,7 +45,7 @@ export default function Home() {
               </div>
            
            
-          </div>
+          </div> */}
   
       {/* card */}
       <div className="relative bg-gray-50 pb-20  lg:pb-28 ">
