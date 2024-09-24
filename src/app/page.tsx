@@ -48,7 +48,7 @@ export default function Home() {
             {/* <!-- First blog post --> */}
             {blogs.map((blog: any, index: any) => {
               return (
-                <div className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
+                <div className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80" key={index}>
                   <img
                     src={blog.image.filePath.replace("../public", "")}
                     alt={blog.authorName}
