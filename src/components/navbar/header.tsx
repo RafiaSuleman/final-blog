@@ -16,11 +16,6 @@ const Header = () => {
         <div className="hidden xl:block">
         <Navbar />
         </div>
-        <div className="w-32">
-
-        </div>
-       
-     
         <div className="xl:hidden">
           <Mobilenav />
         </div>
